@@ -1,0 +1,46 @@
+{
+    "gigs": [
+      {
+        "id": 0,
+        "artist": "Rock Band",
+        "event": "Big Music Festival",
+        "eventAd": "https://www.google.com",
+        "eventDescription": "Rock band is a good band",
+        "date": "29.11.2019",
+        "time": "18:00",
+        "address": "Hepolamminkatu 10",
+        "city": "Tampere",
+        "ticketsUrl": "https://www.facebook.com",
+        "musicStyle": "Rock",
+        "artistsUrl": "http://www.rockband.com"
+      },
+      {
+        "id": 1,
+        "artist": "Pop Band",
+        "event": "Big Music Festival",
+        "eventAd": "https://www.tredu.com",
+        "eventDescription": "Pop band is a good band",
+        "date": "2.12.2019",
+        "time": "20:00",
+        "address": "Hepolamminkatu 20",
+        "city": "Tampere",
+        "ticketsUrl": "https://www.amazon.com",
+        "musicStyle": "Pop",
+        "artistsUrl": "http://www.popband.com"
+      },
+      {
+        "id": 2,
+        "artist": "Metal Band",
+        "event": "Big Music Festival",
+        "eventAd": "https://www.snapchat.com",
+        "eventDescription": "Metal band is a good band",
+        "date": "3.12.2019",
+        "time": "22:00",
+        "address": "Hepolamminkatu 30",
+        "city": "Tampere",
+        "ticketsUrl": "https://www.hotmail.com",
+        "musicStyle": "Pop",
+        "artistsUrl": "http://www.metalband.com"
+      }
+    ]
+  }
