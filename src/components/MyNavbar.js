@@ -1,14 +1,14 @@
 import React from 'react';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
-const MyNavbar = ({links}) => {
+const MyNavbar = ({links, setOldGigs, oldGigs}) => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Keikkakauppa</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link onSelect={e => setOldGigs (true) } href="#">Tulevat keikat</Nav.Link>
+            <Nav.Link onSelect={e => setOldGigs (false) } href="#">Menneet keikat</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                
                 {links.map(link => <NavDropdown.Item href={link}>{link}</NavDropdown.Item>)}

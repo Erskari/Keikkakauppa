@@ -1,19 +1,30 @@
 import React from 'react';
-import gigService from './services/gigs';
+import gigService from '../services/gigs';
 
-// HYVIN KESKEN
+// SEMI KESKEN
 
 const Gig = ({gig}) => {
+    if (gig.date > new Date().toISOString()) {
     return (
-        <li onClick={e => handleChange(e, note.id)} className={textColor}> {note.content})
+        <div>
+            <li> {gig.artist}</li>
+        </div>
         )
+    } else {
+        return (
+        <div>
+            <li> {gig.artist}</li>
+        </div>
+        )
+    }
 }
+const Gigs = ({gigs, setGigs}) => {
 return (
     <div className="part">
-        <ul className="notes">
-            {notes.map(note => <Gigs gig={gig} key={gig.id} />)}
+        <ul className="gigs">
+            {gigs.map(gig => <Gig gig={gig} key={gig.id} />)}
         </ul>
     </div>
     )
-
-export default App;
+}
+export default Gigs;
