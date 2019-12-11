@@ -9,13 +9,7 @@ const MyNavbar = ({links, setOldGigs, oldGigs}) => {
             <Nav className="mr-auto">
             <Nav.Link onSelect={e => setOldGigs (true) } href="oldgigs">Menneet keikat</Nav.Link>
             <Nav.Link onSelect={e => setOldGigs (false) } href="gigs">Tulevat keikat</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-               
-                {links.map(link => <NavDropdown.Item href={link}>{link}</NavDropdown.Item>)}
-                
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="newgig">Lisää uusi keikka</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Navbar>

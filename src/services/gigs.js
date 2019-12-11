@@ -6,6 +6,12 @@ const getAll = () => {
     return request.then(response => response.data)
 }
 
+const add = newGig => {
+    const request = axios.post(baseUrl, newGig)
+    return request.then(response => response.data)
+}
+
 export default {
     getAll: getAll,
+    add: add,
 }

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import MyNavbar from './components/MyNavbar';
 import Home from './components/Home';
 import Gigs from './components/Gigs';
+import NewGig from './components/NewGig';
 import gigService from './services/gigs';
 import {
   BrowserRouter as Router,
@@ -15,6 +16,17 @@ export default function App() {
     const [oldGigs, setOldGigs] = useState(false);
     const [gigs, setGigs] = useState([]);
     const [newGigg, setNewGig] = useState("");
+
+    const [newArtist, setNewArtist] = useState("");
+    const [newEvent, setNewEvent] = useState("");
+    const [newEventAd, setNewEventAd] = useState("");
+    const [newDescription, setNewDescription] = useState("");
+    const [newDate, setNewDate] = useState("");
+    const [newAddress, setNewAddress] = useState("");
+    const [newCity, setNewCity] = useState("");
+    const [newTicketsUrl, setNewTicketsUrl] = useState("");
+    const [newMusicStyle, setNewMusicStyle] = useState("");
+    const [newArtistUrl, setNewArtistUrl] = useState("");
 
     const newGig = gigs.filter(k => {const gigDate = new Date(k.date); 
         return new Date(k.date) >= new Date()});
@@ -32,16 +44,31 @@ export default function App() {
         const now = new Date();
         event.preventDefault();
         const testGig = {
-            content: newGigg,
-            date: now.toISOString(),
-            
+            artist: newArtist,
+            event: newEvent,
+            eventAd: newEventAd,
+            eventDescription: newDescription,
+            date: newDate,
+            address: newAddress,
+            city: newCity,
+            ticketsUrl: newTicketsUrl,
+            musicStyle: newMusicStyle,
+            artistUrl: newArtistUrl, 
         };
         gigService.add(testGig)
         .then(gig => {
         let tempGigs = gigs.concat(gig);
         setGigs(tempGigs);
-        setNewGig("");
-        
+        setNewArtist("");
+        setNewEvent("");
+        setNewEventAd("");
+        setNewDescription("");
+        setNewDate("");
+        setNewAddress("");
+        setNewCity("");
+        setNewTicketsUrl("");
+        setNewMusicStyle("");
+        setNewArtistUrl("");
         })
     }
   return (
@@ -59,6 +86,23 @@ export default function App() {
           </Route>
           <Route path="/gigs">
           {<div><h2>Tulevat keikat</h2><Gigs gigs={newGig} setGigs={setGigs} /></div>}
+          </Route>
+          <Route path="/newgig">
+          <NewGig newArtist={newArtist} setNewArtist={setNewArtist}
+          newEvent={newEvent} setNewEvent={setNewEvent}
+          newEventAd={newEventAd} setNewEventAd={setNewEventAd}
+          newDescription={newDescription} setNewDescription={setNewDescription}
+          newDate={newDate} setNewDate={setNewDate}
+          newAddress={newAddress} setNewAddress={setNewAddress}
+          newCity={newCity} setNewCity={setNewCity}
+          newTicketsUrl={newTicketsUrl} setNewTicketsUrl={setNewTicketsUrl}
+          newMusicStyle={newMusicStyle} setNewMusicStyle={setNewMusicStyle}
+          newArtistUrl={newArtistUrl} setNewArtistUrl={setNewArtistUrl}
+          />
+          <div>
+            <br></br>
+            <button onClick={addGig}>Lisää keikka</button>
+          </div>
           </Route>
           <Route path="/">
             <Home />
